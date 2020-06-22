@@ -1,0 +1,31 @@
+----------------------Glasfish
+cp oracle-jdbc-drivers/ojdbc6.jar glassfish/domains/domain1/lib/ext
+
+inicia el Servidor
+
+asadmin
+
+create-jdbc-connection-pool --restype javax.sql.DataSource --datasourceclassname oracle.jdbc.pool.OracleDataSource --property "user=unnoba:password=unnoba: url=jdbc\\:oracle\\:thin\\:@127.0.0.1\\:1521\\:XE" UnnobaPool
+
+ping-connection-pool UnnobaPool
+
+create-jdbc-resource --connectionpoolid UnnobaPool --target server jdbc/Unnoba
+
+
+-----------------Eclipse	
+http://www.oracle.com/technetwork/middleware/ias/jsf-jpa-tutorial-095959.html
+
+
+mvn install:install-file -Dfile=ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar
+
+<groupId>com.oracle</groupId>
+<artifactId>ojdbc6</artifactId>
+<version>11.2.0</version>
+
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc6</artifactId>
+    <version>11.2.0</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/lib/ojdbc6.jar</systemPath> <!-- must match file name -->
+</dependency>

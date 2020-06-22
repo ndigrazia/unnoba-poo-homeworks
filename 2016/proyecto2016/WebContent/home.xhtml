@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+	 <h:outputStylesheet library="css" name="myStyle.css"/>
+	 <h:outputScript name="script.js" library="js" /> 
+</h:head>
+
+<h:body>
+<f:view>
+	<h:form>
+		<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+	</h:form>
+	<h:form>
+		<h:panelGrid  id="grid" columns="2" cellpadding="5" border="0">
+			<p:outputLabel for="Username" value="#{msg.name}" styleClass="font-login"/>
+			<p:inputText id="Username" value="#{loginBean.name}" required="true" 
+				requiredMessage="#{msg.emptyUser}"/>
+			
+			<p:outputLabel for="pass" value="#{msg.password}" styleClass="font-login"/>
+			<p:password id="pass" value="#{loginBean.password}" required="true" 
+				requiredMessage="#{msg.emptyPassword}"/>
+		</h:panelGrid>
+		<p:commandButton action="#{loginBean.validate}" value="#{msg.login}" type="submit"
+			styleClass="button-login" update="grid"/>
+	</h:form>
+</f:view>
+</h:body>
+
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/template.xhtml">
+
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:viewParam name="proyectoSeleccionado" value="#{proyectoBean.seleccionado}"/>
+		</f:metadata>
+	</ui:define>
+	
+	<ui:define name="body">
+		<f:view>
+			<h:form>
+				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+			</h:form>
+			<h:form>
+				<h:panelGrid  id="grid" columns="2" cellpadding="5" border="0">
+					<p:outputLabel for="Nro" value="Nro" styleClass="font-login"/>
+					<p:inputMask id="Nro" value="#{proyectoBean.nro}" mask="9?9999" readonly="true"/>
+					
+					<p:outputLabel for="Desc" value="Descripcion" styleClass="font-login"/>
+					<p:inputText id="Desc" value="#{proyectoBean.descripcion}" readonly="true"/>
+					
+					<p:outputLabel for="FI" value="Fecha inicio" styleClass="font-login"/>
+					<p:calendar id="FI" value="#{proyectoBean.fechaInicio}" showOn="button" readonly="true"/>
+					
+					<p:outputLabel for="FT" value="Fecha terminacion" styleClass="font-login"/>
+					<p:calendar id="FT" value="#{proyectoBean.fechaTerminacion}" showOn="button" readonly="true"/>
+					
+					<p:outputLabel for="Horas" value="Horas" styleClass="font-login"/>
+					<p:inputMask id="Horas" value="#{proyectoBean.horasCoordinacion}" mask="9?9" readonly="true"/>
+				</h:panelGrid>
+			</h:form>
+		</f:view>
+    </ui:define>
+    
+</ui:composition>

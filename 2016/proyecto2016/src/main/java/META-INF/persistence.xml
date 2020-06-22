@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	
+	<persistence-unit name="2016-poo-practica3" transaction-type="RESOURCE_LOCAL">
+	 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>ar.edu.unnoba.poo.proyecto.modelo.Usuario</class>
+		<class>ar.edu.unnoba.poo.proyecto.modelo.Proyecto</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+			<property name="javax.persistence.jdbc.user" value="unnoba"/>
+			<property name="javax.persistence.jdbc.password" value="unnoba"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.hbm2ddl.auto" value="true"/>
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="2016-poo-practica3-JTA" transaction-type="JTA">
+		<jta-data-source>jdbc/unnoba</jta-data-source>
+		<class>ar.edu.unnoba.poo.proyecto.modelo.Usuario</class>
+		<class>ar.edu.unnoba.poo.proyecto.modelo.Proyecto</class>
+		<properties>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+		</properties>
+	</persistence-unit>
+	
+</persistence>

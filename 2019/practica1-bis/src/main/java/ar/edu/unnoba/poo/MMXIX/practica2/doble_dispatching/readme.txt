@@ -1,0 +1,1 @@
+doubleDispatching=visitor pattern

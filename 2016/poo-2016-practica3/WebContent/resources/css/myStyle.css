@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+
+.errors {
+   	font-style: italic;
+  	color: red;
+}
+
+.font-login {
+   	font-style: italic;
+}
+
+.emphasis {
+	font-size: 3em;
+	color: green;
+}
+
+.button-login {
+   	color: white;
+   	background: red;
+   	font-style: italic;
+}

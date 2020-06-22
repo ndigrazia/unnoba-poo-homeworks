@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14777490550380" configfile="/2016-poo-practica4/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="370" id="pf14777509169700" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf14777509169701 pf14777509169702" inlinks="pf14777509169703" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" x="338" y="178" id="pf14777509169704" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14777509169703" inlinks="pf14777509169701" path="/welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="nowelcome.xhtml" x="338" y="562" id="pf14777509169705" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14777509169702" path="/nowelcome.xhtml"/>
+  <links id="pf14777509169701" target="pf14777509169704" source="pf14777509169700" outcome="welcome"/>
+  <links id="pf14777509169702" target="pf14777509169705" source="pf14777509169700" outcome="nowelcome"/>
+  <links id="pf14777509169703" target="pf14777509169700" source="pf14777509169704" outcome="index"/>
+</pageflow:Pageflow>

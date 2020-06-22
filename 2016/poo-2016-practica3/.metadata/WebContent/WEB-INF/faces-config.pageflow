@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14750002427950" configfile="/poo-2016-practica3/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="178" id="pf14750003916431" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14763600514430" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="nowelcome.xhtml" x="122" y="562" id="pf14750013465469" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" path="/nowelcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index2.xhtml" x="338" y="178" id="pf14763600514431" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14763600514430" path="/vistas/inicio.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="vistas/altaProducto.xhtml" x="122" y="946" id="pf14768197946591" referenceLink="//@navigationRule.1/@fromViewId|" path="/vistas/altaProducto.xhtml"/>
+  <links id="pf14763600514430" target="pf14763600514431" source="pf14750003916431" outcome="welcome"/>
+</pageflow:Pageflow>

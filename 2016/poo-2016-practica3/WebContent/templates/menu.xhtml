@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+<h:form>  
+    <p:menubar>
+        <p:submenu label="Opciones" icon="ui-icon-gear">
+            <p:submenu label="Proyectos" icon="ui-icon-refresh">
+                <p:menuitem value="Alta" action="#{menuVistaBean.altaProyecto}" process="@form" ajax="false"/>
+                <p:menuitem value="Listado" action="#{menuVistaBean.listadoProyectos}" process="@form" ajax="false"/>
+            </p:submenu>
+            <p:menuitem action="#{loginBean.logout()}" value="salir" icon="ui-icon-extlink"/>
+        </p:submenu>
+    </p:menubar>
+</h:form>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+	 <h:outputStylesheet library="css" name="myStyle.css"/>
+	 <h:outputScript name="script.js" library="js" /> 
+</h:head>
+
+<h:body>
+<f:view>
+	<h:form>
+		<h:panelGrid columns="2" border="0">
+			<h:outputText value="#{msg.name}" styleClass="font-login"/>
+			<h:inputText id="Nombre" value="#{usuario.nombre}"></h:inputText>
+			<h:outputText value="#{msg.password}" styleClass="font-login"/>
+			<h:panelGroup>
+				<h:inputSecret id="Clave" value="#{usuario.clave}">
+					<!-- <f:validator validatorId="ValidatorClave"/>-->             
+				</h:inputSecret>
+				<!-- <h:message for="pass" style="color:red"/>-->
+			</h:panelGroup>
+		</h:panelGrid>
+		<h:commandButton action="#{usuario.login}" value="#{msg.login}" type="submit" 
+			styleClass="button-login" onclick="return validarUsuario(this.form)"/>
+	</h:form>
+</f:view>
+</h:body>
+
+</html>
