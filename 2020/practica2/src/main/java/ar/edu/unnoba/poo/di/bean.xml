@@ -7,4 +7,4 @@
   <bean id='greetMeBean' class='ar.edu.unnoba.poo.di.GreetMeBean'>
     <property name='greeter' ref='myGreeter'/>
   </bean>
-</beans
+</beans>
