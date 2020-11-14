@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Detail Room</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Booking Detail</h1>
+	Detail Room: <b th:text="${room.id}" /> <b th:text="${room.name}" />
+	
+	<form th:action="@{/rooms/{id}/bookings(id=${room.id})}" method="post" enctype="multipart/form-data" >
+			<div>
+				From: <input name="from" />
+			</div>
+			<div>
+				To: <input name="to" />
+			</div>
+			<div>
+				<input type="submit" value="Reserve" name="button"/>
+			</div>
+	</form>
+</body>
+</html>

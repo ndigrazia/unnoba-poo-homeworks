@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+	<title>Booking</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Find deals on room and much more...</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th></th>
+		</tr>
+		<tr th:each="room : ${availabilities}">
+			<td th:text="${room.name}"></td>
+			<td>
+				<a th:href="@{/rooms/{id}(id=${room.id})}">view</a>
+			</td>
+		</tr>
+	</table>
+	<hr/>
+	<form th:action="@{/roomsAvailabilities}" method="post" enctype="multipart/form-data">
+		<div>
+			From: <input name="from" />
+		</div>
+		<div>
+			To: <input name="to" />
+		</div>
+		<div>
+			Sleeps: <input name="sleeps" />
+		</div>
+		<div>
+			<input type="submit" value="Check availability" name="button"/>
+		</div>
+	</form>
+</body>
+</html>
