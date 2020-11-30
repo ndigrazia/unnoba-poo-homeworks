@@ -1,0 +1,10 @@
+.container {
+    width: 600px;
+    margin: auto;
+}
+.remember-me {
+    text-align: center;
+}
+.btn-login {
+    width: 100%;
+}

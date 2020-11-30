@@ -1,0 +1,61 @@
+<html xmlns="http://thymeleaf.org">
+
+<head>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css"></link>
+    <link th:href="@{/css/layout.css}" rel="stylesheet" type="text/css"></link>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>User Login</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="username">Username</label>
+                    <div class="col-md-4">
+                        <input id="username" name="username" type="text" placeholder="Username" class="form-control input-md" required="" />
+
+                    </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="password">Password</label>
+                    <div class="col-md-4">
+                        <input id="password" name="password" type="password" placeholder="Password" class="form-control input-md" required="" />
+
+                    </div>
+                </div>
+
+                <!-- Multiple Checkboxes (inline) -->
+                <div class="form-group remember-me">
+                    <label class="col-md-4 control-label" for="remember-me"></label>
+                    <div class="col-md-4">
+                        <label class="checkbox-inline" for="remember-me-0">
+      <input type="checkbox" name="remember-me" id="remember-me-0" value="true" />
+      Remember Me
+    </label>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="submit"></label>
+                    <div class="col-md-4">
+                        <button id="submit" name="submit" class="btn btn-primary btn-login">Login</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+        <script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    </div>
+</body>
+
+</html>
