@@ -67,3 +67,5 @@ git checkout develop
 git add .
 git commit -m "my project commit"
 git push -u origin develop
+
+Learning GIT: https://learngitbranching.js.org/
