@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 
+import javax.persistence.EntityManager;
+
 import com.example.pmyfirstweb.entities.User;
 
 @Service
@@ -16,6 +18,7 @@ public class UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+
 
 	public List<User> retrieveAllUsers() {
 		return userRepository.findAll();
