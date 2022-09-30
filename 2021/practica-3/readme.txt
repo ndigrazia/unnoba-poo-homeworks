@@ -142,4 +142,5 @@ Ejercicio práctico
 	spring.datasource.password=secret
 	spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 	
+	Editor de Base de datos de la comunidad: https://dbeaver.io/
 	
