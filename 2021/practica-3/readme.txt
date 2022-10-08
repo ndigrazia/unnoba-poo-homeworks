@@ -78,6 +78,12 @@ Ejercicio práctico
 				</exclusion>
 			</exclusions>
 		</dependency>
+		</dependency>
+			<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 	
 	Posicionarse sobre el directorio del proyecto e inicializar el versionado con Git:
