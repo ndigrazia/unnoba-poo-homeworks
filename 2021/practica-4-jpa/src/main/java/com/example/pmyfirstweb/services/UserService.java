@@ -46,7 +46,7 @@ public class UserService {
 	      });
 	}
 
-	public void deleteUser(@PathVariable Long id) {
+	public void deleteUser(Long id) {
 		userRepository.deleteById(id);
 	}
 	
