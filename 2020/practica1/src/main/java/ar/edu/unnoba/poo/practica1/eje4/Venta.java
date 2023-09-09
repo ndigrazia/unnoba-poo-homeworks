@@ -22,10 +22,13 @@ public class Venta {
 		
 		public static void main(String[] args) {
 			FormaPago formaPago = new Credito("Banco Provincia VISA", "123456", "123");
-			
+						
 			Venta v = new Venta();
 			v.setFormaPago(formaPago);
-			
+			v.cobrar();
+
+			formaPago = new Internet("juan");
+			v.setFormaPago(formaPago);
 			v.cobrar();
 		}
 	
