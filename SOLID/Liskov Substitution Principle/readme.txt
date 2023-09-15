@@ -78,3 +78,78 @@ Second section: Properties Rules
                         Constraint: Capacity(max number of elements) never changes.
                         DuplicatingQueue extends BoundedQueue
                         Later, DuplicatingQueue add a setCapacity(int) that change its capacity. Because of this, the capacity changes after initialization.  (Violation of principle)
+
+
+Examples:
+
+Invariant violation:
+public class BoundedQueue  {
+
+	private int capacity;
+	private Queue queue;
+	
+	BoundedQueue(int capacity) {
+		this.capacity = capacity;
+		queue = new Queue();
+	}
+	
+	add(Element) {}
+	
+	remove(Element) {}
+	
+	queue getQueue() {}
+	
+}
+
+DuplicatingQueue extends BoundedQueue {
+		
+	DuplicatingQueue(int capacity) {
+		super(capacity)
+	}
+	
+	duplicateContent() {
+		getQueue().duplicate();
+	}
+	
+	
+	add(Element) {}
+	
+	remove(Element) {}
+}
+
+
+
+Constraints violation:
+
+public class BoundedQueue  {
+
+	private int capacity;
+	
+	BoundedQueue(int capacity) {
+		this.capacity = capacity;
+	}
+	
+	add(Element) {}
+	
+	remove(Element) {}
+	
+}
+
+DuplicatingQueue extends BoundedQueue {
+
+	private int capacity2;
+
+	DuplicatingQueue(int capacity) {
+		super(capacity)
+		
+		this.capacity2 = capacity;
+	}
+	
+	setCapacity(int capacity) {
+		capacity2 = capacity
+	}
+	
+	add(Element) {}
+	
+	remove(Element) {}
+}
