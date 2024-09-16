@@ -2,7 +2,7 @@ package follow;
 
 public class SalaryCalculator {
     
-    private TaxCalculatorFactory factory;
+    private CalculatorFactory factory;
 
     public float calculateSalary(Employee employee) {
         TaxCalculator taxCalculator= factory.createTaxCalculator(employee.getType());
@@ -11,7 +11,7 @@ public class SalaryCalculator {
         return 0;
     }
 
-    public void setTaxCalculatorFactory(TaxCalculatorFactory factory) {
+    public void setTaxCalculatorFactory(CalculatorFactory factory) {
         this.factory = factory;
     }
     
