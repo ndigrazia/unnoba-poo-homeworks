@@ -8,6 +8,8 @@ public class Service {
     Service can't be reused form other Clients(Classes). For example ClienteB, ClienteC
     **/
     public void doSomethingAsync(Client client) { 
+        //Do something Async
+        //After that, it call client's method.
         client.doSomethingPhaseTwo();
     }
     

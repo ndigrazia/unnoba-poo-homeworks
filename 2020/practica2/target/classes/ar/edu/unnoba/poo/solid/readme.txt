@@ -29,7 +29,7 @@ Do something that is the original responsibility of the class
 
 #Java Build Tools
 
-Apache Ant es una herramienta usada en programaci髇 para la realizaci髇 de tareas mec醤icas y repetitivas, normalmente durante la fase de compilaci髇 y construcci髇
+Apache Ant es una herramienta usada en programaci贸n para la realizaci贸n de tareas mec谩nicas y repetitivas, normalmente durante la fase de compilaci贸n y construcci贸n
 Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
 
 Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. 
@@ -46,7 +46,7 @@ verify - run any checks on results of integration tests to ensure quality criter
 install - install the package into the local repository, for use as a dependency in other projects locally
 deploy - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.    
 
-Versionado Sem醤tico:
+Versionado Sem谩ntico:
 https://semver.org/lang/es/
 
 Git Flow:
@@ -54,8 +54,11 @@ https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow
 
 Git's steps:
 
+mkdir git
+cd git
+
 git init
-git remote add origin https://github.com/ndigrazia/unnobapoorepo.git
+git remote add origin https://github.com/ndigrazia/test.git
 echo "# " >> README.md
 git add README.md
 git commit -m "first commit"
@@ -64,8 +67,17 @@ git push -u origin master
 
 git branch develop
 git checkout develop
+echo "# " >> README2.md
 git add .
 git commit -m "my project commit"
 git push -u origin develop
+
+git checkout master
+git merge develop
+git add .
+git push -u origin master
+
+git tag 0.1
+git push origin --tags
 
 Learning GIT: https://learngitbranching.js.org/
