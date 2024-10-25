@@ -1,6 +1,8 @@
 package com.example.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.PlayList;
@@ -19,16 +21,16 @@ import java.util.ArrayList;
 public class PlayListRestController {
 
     @Autowired
-	private PlayListService playlistService;
+	PlayListService playlistService;
 
 	@Autowired
-	private SongService songService;
+	SongService songService;
 
 	@Autowired
-	private UserService userService;
+	UserService userService;
 
     @GetMapping("/playlist")	
-	public PlayList makeAPlaylist() {
+	public ResponseEntity<PlayList> makeAPlaylist() {
 		List<Song> songs = new ArrayList<Song>();		
 		songs.add(songService.getSong(1));
 		songs.add(songService.getSong(2));
@@ -37,7 +39,7 @@ public class PlayListRestController {
 
 		PlayList p = playlistService.makeAPlaylist("playlist-1", u, songs);
 
-		return p;
+		return new ResponseEntity<PlayList>(p, HttpStatus.OK);
 	}
 	
 }

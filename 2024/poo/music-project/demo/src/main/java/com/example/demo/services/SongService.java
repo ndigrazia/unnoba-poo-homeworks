@@ -23,7 +23,7 @@ public class SongService {
 	    return SongRepository.findById(id).orElseThrow(() -> new NoSuchElementException());
 	}
     
-    public void addCountry(Song s) {
+    public void addSong(Song s) {
         SongRepository.save(s);
     }
 	
