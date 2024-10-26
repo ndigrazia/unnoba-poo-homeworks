@@ -39,7 +39,7 @@ public class PlayListRestController {
 
 		PlayList p = playlistService.makeAPlaylist("playlist-1", u, songs);
 
-		return new ResponseEntity<PlayList>(p, HttpStatus.OK);
+		return new ResponseEntity<PlayList>(p, HttpStatus.CREATED);
 	}
 	
 }

@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,7 @@ import java.util.ArrayList;
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder
 public class PlayList {
     
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})

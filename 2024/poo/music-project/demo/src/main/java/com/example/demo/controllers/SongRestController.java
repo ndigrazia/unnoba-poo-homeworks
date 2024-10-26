@@ -19,7 +19,7 @@ public class SongRestController {
 	private SongService songService;
 
     @GetMapping("/songs")	
-	public ResponseEntity<List<Song>> retrieveAllCountries() {
+	public ResponseEntity<List<Song>> retrieveAllSongs() {
 		return new ResponseEntity<>(songService.retrieveAllSongs(), HttpStatus.OK);
 	}
 	

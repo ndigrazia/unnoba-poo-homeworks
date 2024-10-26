@@ -61,7 +61,7 @@ public class PlayListRestControllerTest {
 		ResponseEntity<PlayList> response = controller.makeAPlaylist();
 		
 		// Assert
-		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(HttpStatus.CREATED, response.getStatusCode());
 		assertEquals(playlist, response.getBody());
 	}
     
