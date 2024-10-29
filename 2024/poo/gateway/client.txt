@@ -1,0 +1,11 @@
+curl --location 'http://localhost:7000/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'client_id=springboot-microservice' \
+--data-urlencode 'client_secret=dmKzVFwBRgKjrTGeaA1MM0vvAmbDrDYa' \
+--data-urlencode 'username=user1' \
+--data-urlencode 'password=123456'
+
+
+curl --location 'http://localhost:7000/music/playlist' \
+--header 'Authorization: Bearer <token>'

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "eureka"
+		},
+		{
+			"path": "music-project/demo"
+		},
+		{
+			"path": "gateway"
+		}
+	],
+	"settings": {}
+}

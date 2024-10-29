@@ -1,0 +1,33 @@
+server:
+  port: 7000
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#    register-with-eureka: false
+spring:
+  application:
+    name: gateway
+  cloud: 
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+      routes:
+      - id: music-service
+        uri: http://localhost:8090/playlist #lb://music-service
+        predicates:
+          - Path=/music/**
+        filters:
+          - RewritePath=/music/*, /
+      - id: token
+        uri:  http://localhost:8080
+        predicates:
+          - Path=/token/**
+        filters:
+          - RewritePath=/token/*, /realms/Demo-Realm/protocol/openid-connect/token
