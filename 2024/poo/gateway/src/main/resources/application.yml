@@ -1,10 +1,10 @@
 server:
   port: 7000
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
-#    register-with-eureka: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: false
 spring:
   application:
     name: gateway
@@ -20,7 +20,7 @@ spring:
               allowedHeaders: "*"
       routes:
       - id: music-service
-        uri: http://localhost:8090/playlist #lb://music-service
+        uri: lb://music-service #http://localhost:8090/playlist
         predicates:
           - Path=/music/**
         filters:

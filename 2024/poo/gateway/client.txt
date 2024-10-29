@@ -9,3 +9,6 @@ curl --location 'http://localhost:7000/token' \
 
 curl --location 'http://localhost:7000/music/playlist' \
 --header 'Authorization: Bearer <token>'
+
+Eureka Server
+http://localhost:8761/
