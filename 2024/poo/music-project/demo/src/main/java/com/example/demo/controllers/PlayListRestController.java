@@ -1,10 +1,12 @@
 package com.example.demo.controllers;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.PlayListDto;
 import com.example.demo.entities.PlayList;
 import com.example.demo.entities.Song;
 import com.example.demo.entities.User;
@@ -29,8 +31,11 @@ public class PlayListRestController {
 	@Autowired
 	UserService userService;
 
+	@Autowired
+	ModelMapper modelMapper;
+
     @GetMapping("/playlist")	
-	public ResponseEntity<PlayList> makeAPlaylist() {
+	public ResponseEntity<PlayListDto> makeAPlaylist() {
 		List<Song> songs = new ArrayList<Song>();		
 		songs.add(songService.getSong(1));
 		songs.add(songService.getSong(2));
@@ -39,7 +44,9 @@ public class PlayListRestController {
 
 		PlayList p = playlistService.makeAPlaylist("playlist-1", u, songs);
 
-		return new ResponseEntity<PlayList>(p, HttpStatus.CREATED);
+		PlayListDto dto = modelMapper.map(p, PlayListDto.class);
+		
+		return new ResponseEntity<PlayListDto>(dto, HttpStatus.CREATED);
 	}
 	
 }

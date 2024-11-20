@@ -10,10 +10,12 @@ import static org.mockito.Mockito.when;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import com.example.demo.dto.PlayListDto;
 import com.example.demo.entities.MusicArtistUser;
 import com.example.demo.entities.PlayList;
 import com.example.demo.entities.Song;
@@ -51,18 +53,23 @@ public class PlayListRestControllerTest {
 		
 		when(playlistServiceMock.makeAPlaylist(anyString(), any(User.class), anyList())).thenReturn(playlist);
 
+		ModelMapper mapper = new ModelMapper();
+
+		PlayListDto dto = mapper.map(playlist, PlayListDto.class);
+		
 		// Set up system under test
 		PlayListRestController controller = new PlayListRestController();
 		controller.playlistService = playlistServiceMock;
 		controller.songService = songServiceMock;
 		controller.userService = userServiceMock;
-		
+		controller.modelMapper = mapper;
+
 		// Call method under test
-		ResponseEntity<PlayList> response = controller.makeAPlaylist();
+		ResponseEntity<PlayListDto> response = controller.makeAPlaylist();
 		
 		// Assert
 		assertEquals(HttpStatus.CREATED, response.getStatusCode());
-		assertEquals(playlist, response.getBody());
+		assertEquals(dto, response.getBody());
 	}
     
 }

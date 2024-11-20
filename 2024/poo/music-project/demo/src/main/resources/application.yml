@@ -34,10 +34,10 @@ jwt:
     converter:
       resource-id: springboot-microservice
       principal-attribute: principal_username
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    preferIpAddress: false
-    hostname: localhost
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#  instance:
+#    preferIpAddress: false
+#    hostname: localhost
