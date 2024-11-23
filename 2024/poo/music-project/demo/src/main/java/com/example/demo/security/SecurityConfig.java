@@ -21,11 +21,15 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((authz) ->
+        http.csrf().disable() // H2 Console no funciona bien con CSRF habilitado
+        .headers().frameOptions().disable() // Permite la carga del iframe de H2 Console
+        .and()
+        .authorizeHttpRequests((authz) ->
                 authz//.requestMatchers(HttpMethod.GET, "/api/hello").permitAll()
                 .requestMatchers(HttpMethod.GET, "/playlist/**").hasRole(ADMIN)
                 .requestMatchers(HttpMethod.GET, "/songs/**").hasRole(USER).requestMatchers(HttpMethod.GET,
                                 "/other-resource/**").hasAnyRole(ADMIN,USER)
+                .requestMatchers("/h2-console/**").permitAll()
                 .anyRequest().denyAll());
 
         http.sessionManagement(sess -> sess.sessionCreationPolicy(
