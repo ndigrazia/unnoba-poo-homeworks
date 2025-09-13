@@ -1,0 +1,23 @@
+package eje1.solid.srp.solucion;
+
+public class Cuadrado implements Figura {
+	
+	private double lado;
+
+	public Cuadrado(double lado) {
+		super();
+		this.lado = lado;
+	}
+
+	public double getLado() {
+		return lado;
+	}
+	public void setLado(double lado) {
+		this.lado = lado;
+	}
+
+	public double area() {
+		return Math.pow(lado, 2);
+	}
+
+}

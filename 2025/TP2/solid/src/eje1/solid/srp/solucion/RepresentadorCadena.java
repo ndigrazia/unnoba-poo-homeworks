@@ -1,0 +1,9 @@
+package eje1.solid.srp.solucion;
+
+public class RepresentadorCadena implements Represetador {
+
+	public void mostarArea(GestorFigura gf) {
+		System.out.println("Area total: " + gf.area());
+	}
+
+}
