@@ -23,3 +23,5 @@ logging:
     org:
       springframework:
         security: DEBUG
+jwt:
+  secret-key: MiClaveSecretaSuperSegura

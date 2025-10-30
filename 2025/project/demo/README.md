@@ -11,3 +11,6 @@ curl --location 'http://localhost:8090/participants' \
 
 # Database
 http://localhost:8090/h2-console
+
+# Run
+mvn spring-boot:run      

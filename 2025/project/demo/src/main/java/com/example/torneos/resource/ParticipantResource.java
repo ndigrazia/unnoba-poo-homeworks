@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.torneos.dto.CreateParticipantRequestDTO;
 import com.example.torneos.model.Participant;
 import com.example.torneos.service.ParticipantService;
+import com.example.torneos.util.JwtTokenUtil;
 
 @RestController
 public class ParticipantResource {
@@ -22,9 +23,14 @@ public class ParticipantResource {
 	@Autowired
 	private ModelMapper modelMapper;
 
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+
 	@GetMapping("/")
 	public String index() {
-		return "Hello World!";
+        String token = jwtTokenUtil.generateToken("test@gmail.com");
+
+		return "Hello World!, token: " + token + ", is valid: " + jwtTokenUtil.verify(token) + ", subject: " + jwtTokenUtil.getSubject(token);
 	}
 
 	@PostMapping("/participants")
