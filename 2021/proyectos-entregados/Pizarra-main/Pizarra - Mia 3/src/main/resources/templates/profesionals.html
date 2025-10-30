@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Profesionales</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Lista de Profesionales</h1>
+        <div th:if="${profesionals != null and !profesionals.empty}">
+            <table border="1">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Matricula</th>
+                    <th>Eliminar</th>
+                </tr>
+                <tr th:each="profesional : ${profesionals}">
+                    <td th:text="${profesional.nombre}">Mostrar Nombre</td>
+                    <td th:text="${profesional.apellido}">Mostrar Apellido</td>
+                    <td th:text="${profesional.telefono}">Mostrar Apellido</td>
+                    <td th:text="${profesional.email}">Mostrar Email</td>
+                    <td th:text="${profesional.matricula}">Mostrar Apellido</td>
+                    <td><a th:href="@{/delete/} + ${profesional.id_profesional}"th:text="Eliminar"/></td>
+                </tr>
+            </table>
+        </div>
+        <div th:if="${profesionals == null or profesionals.empty}">
+            La lista de profesionales está vacía
+        </div>
+        <form th:action="@{/principal}"method="GET">
+            <button type="sumbit" class="btn btn-primary mt-3">Volver </button>
+        </form>
+        
+    </body>
+</html>

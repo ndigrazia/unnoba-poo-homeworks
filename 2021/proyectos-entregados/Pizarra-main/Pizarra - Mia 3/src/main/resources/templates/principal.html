@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="default::head"></head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card card-body">
+                    <span th:if="${session.usuario != null}">Bienvenido/a <span class="font-italic"th:text="${session.usuario.nombre}"</span></span>
+                    <br>
+                    <br>
+                    <a th:href = "@{/users}">Lista de Usuarios </a>
+                    <br>
+                    <a th:href = "@{/profesionals}">Lista de Profesionales </a>
+                    <br>
+                    <a th:href = "@{/registroProfesional}">Registrar Profesional </a>
+                    <br>
+                    <a th:href = "@{/intervenciones}">Intervenciones </a>
+                    <br>
+                    <a th:href = "@{/registroIntervencion}">Registrar Intervencion </a>
+                    <br>
+                    <form th:action="@{/logout}"method="POST">
+                        <button type="sumbit" class="btn btn-primary mt-3">Salir </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.login-page{
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.left-container{
+
+}
+
+.right-container{
+    height: 90%;
+}
+
+.login-input{
+    outline: none;
+}
+
+@media (max-width: 992px) {
+    .left-container{
+        height: 10%;
+    }
+    .right-container{
+        height: 90%;
+    }
+  }

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+body {
+  background:#ffffff;
+  color: #898989;
+  font-family: "Poppins", helvetica;
+  font-size: 15px;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+header{
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.08);
+}
+
+header img {
+  max-width: 80px;
+  float: left;
+  margin: 10px;
+}
+
+h1,h2{
+  text-align: center;
+}
+
+h2{
+  color: #292929;
+  font-weight: 600;
+}
+
+form {
+  max-width: 400px;
+  background-color: transparent;
+  margin: 0 auto; /* Centrar el formulario horizontalmente */
+  color: #999999;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+label {
+  font-size: 24px;
+}
+
+button{
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+nav{
+  padding: 40px;
+}
+
+nav{
+  font-size: 20px;
+}
+
+a{
+  text-decoration: none; 
+  color: #0077cc; 
+  font-size: 20px; 
+}
+
+a:hover {
+  color: #004466; 
+}
+
+.notificacion{
+  text-align: center;
+}
+
+footer{
+  padding: 20px;
+  background-color: #0077cce7;
+}

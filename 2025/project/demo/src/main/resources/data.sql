@@ -1,0 +1,1 @@
+INSERT INTO participants (id, name, surname, email) VALUES (1, 'Juan', 'Perez', 'jperez@gmail.com');

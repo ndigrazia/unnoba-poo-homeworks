@@ -1,0 +1,44 @@
+/*COLOR PALETTE*/
+
+.light-grey{
+  background-color: #909294;
+}
+
+.dark-gray{
+  background-color: #7b7b7b;
+}
+
+.light-green{
+  background-color: #47b984;
+}
+
+.dark-green{
+  background-color: #14a662;
+}
+
+.light-grey-text{
+  color: #909294;
+}
+
+.dark-gray-text{
+  color: #7b7b7b;
+}
+
+.light-green-text{
+  color: #47b984;
+}
+
+.dark-green-text{
+  color: #14a662;
+}
+
+/*DECORATIVE OPTIONS*/
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.decoration-none{
+  text-decoration: none;
+  list-style: none;
+}

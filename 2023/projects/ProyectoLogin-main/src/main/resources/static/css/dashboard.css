@@ -1,0 +1,37 @@
+.dashboard-page{
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.dashboard-header{
+  background-color: #47b984;
+}
+
+.dashboard-link{
+  background-color: #47b984;
+  color: white;
+}
+
+.list-item:hover{
+  background-color: #47b984;
+  color: white;
+}
+
+.list-item:hover i,
+.list-item:hover span,
+.list-item:hover a {
+  color: white;
+  text-decoration: white;
+}
+
+.accordion {
+--bs-accordion-button-active-bg: #47b984;
+}
+
+.side-nav{
+  min-width: 15rem;
+}
+
+.dashboard-li{
+  list-style: none ;
+}

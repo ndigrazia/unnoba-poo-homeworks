@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="default::head">
+    </head>
+<body>
+    <h1 th:inline="text">No se puede borrar a si mismo!</h1>
+    
+    <form th:action="@{/users}"method="GET">
+        <button type="sumbit" class="btn btn-primary mt-3">Volver </button>
+    </form>
+    <form th:action="@{/logout}"method="POST">
+        <button type="sumbit" class="btn btn-primary mt-3">Salir </button>
+    </form>
+</body>
+</html>

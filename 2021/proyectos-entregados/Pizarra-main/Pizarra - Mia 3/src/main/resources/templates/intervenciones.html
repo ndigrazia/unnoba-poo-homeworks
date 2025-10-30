@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Intervenciones</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Listado de Intervenciones</h1>
+        <div th:if="${intervenciones != null and !intervenciones.empty}">
+            <table border="1">
+                <tr>
+                    <th>Fecha y Hora de Inicio</th>
+                    <th>Fecha y Hora de Finalizacion</th>
+                    <th>Paciente: </th>
+                    <th>Profesional</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                    <th>Informacion</th>
+                </tr>
+                <tr th:each="intervencion : ${intervenciones}">
+                    <td th:text="${intervencion.fechaHoraInicio}">Mostrar FechaHoraInicio</td>
+                    <td th:text="${intervencion.fechaHoraFin}">Mostrar FechaHoraFin</td>
+                    <td th:text="${intervencion.paciente}">Mostrar Paciente</td>
+                    <td th:text="${intervencion.profesional.getNombre()}">Mostrar Profesional</td>
+                    <td><a th:href="@{/editar/} + ${intervencion.id_intervencion}"th:text="Editar"/></td>
+                    <td><a th:href="@{/deleteIntervencion/} + ${intervencion.id_intervencion}"th:text="Eliminar"/></td>
+                    <td><a th:href="@{/informacionIntervencion/} + ${intervencion.id_intervencion}"th:text="Informacion"/></td>
+                </tr>
+            </table>
+
+        </div>
+        <div th:if="${intervenciones == null or intervenciones.empty}">
+            La lista de Intervenciones está vacía
+        </div>
+        <form th:action="@{/principal}"method="GET">
+            <button type="sumbit" class="btn btn-primary mt-3">Volver </button>
+        </form>
+        <form th:action="@{/registroIntervencion}"method="GET">
+            <button type="sumbit" class="btn btn-primary mt-3">Nueva Intervencion</button>
+        </form>
+    </body>
+</html>

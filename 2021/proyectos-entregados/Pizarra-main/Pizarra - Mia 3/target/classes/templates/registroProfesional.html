@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="default::head">
+    </head>
+    <body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"><h4>Registro de Profesional</h4></div>
+                    <div class="card-body">
+
+                        <form th:action="@{/registroProfesional}"th:object="${profesional}"method="POST">
+                            <div class="row form-group">
+                                <label class="col-md-3">Nombre:</label>
+                                <input type="text"class="form-control col-md-7"th:field="*{nombre}"/> 
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Apellido:</label>
+                                <input type="text"class="form-control col-md-7"th:field="*{apellido}"/> 
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Email:</label>
+                                <input type="text"class="form-control col-md-7"th:field="*{email}"/> 
+                                <span th:if="${#fields.hasErrors('email')}"th:errors="*{email}">Mail invalido</span>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Telefono:</label>
+                                <input type="text"class="form-control col-md-7"th:field="*{telefono}"/> 
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Matricula:</label>
+                                <input type="text"class="form-control col-md-7"th:field="*{matricula}"/> 
+                            </div>
+                            <div class="row form-group">
+                                <button type="submit" class="btn btn-success btn-block col-md-7 offset-3">Continuar</button>
+                            </div>
+                        </form>
+                        <form th:action="@{/principal}"method="GET">
+                            <button type="sumbit" class="btn btn-primary mt-3">Volver </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </body>
+</html>

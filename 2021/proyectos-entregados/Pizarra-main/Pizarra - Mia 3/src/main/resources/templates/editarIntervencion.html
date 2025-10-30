@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Datos de la Intervencion</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Datos de la Persona</h1>
+        <a th:href="@{/intervenciones}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${intervencion}">
+            <input type="hidden" name="id_intervencion" th:field="*{id_intervencion}"/>
+            <br>
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" name="descripcion" th:field="*{descripcion}"/>
+            <br>
+            <input type="hidden" name="fechaHoraInicio" th:field="*{fechaHoraInicio}"/>
+            <br>
+            <input type="hidden" name="fechaHoraFin" th:field="*{fechaHoraFin}"/>
+            <br>
+            <input type="hidden" name="paciente" th:field="*{paciente}"/>
+            <br>
+            <input type="hidden" name="profesional" th:field="*{profesional}"/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Club Ascensión</title>
+    <link rel="stylesheet" href="../resources/css/login.css" th:href="@{/css/login.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/94b10fad32.js" crossorigin="anonymous"></script>
+	</head>
+<body class="login-page d-flex p-lg-5 p-0 bg-light">
+
+	<div class="d-flex flex-column flex-grow-1 border border-secondary-subtle rounded-4 bg-white overflow-hidden">
+		<div class="d-flex flex-column flex-lg-row flex-grow-1 align-items-start">
+			<div class="left-container col-6 d-lg-flex flex-column flex-grow-1 justify-content-evenly align-items-center pt-3">
+          <img class="col-6 mb-2" src="../assets/images/icon-club.png" />
+          <div class="text-center d-none d-lg-block">
+            <h3 class="text-secondary fw-bold fs-3">Club Social Ascensión</h3>
+            <p class="text-secondary fs-semibold fs-4 lh-1">Sistema Gestor</p>
+          </div>
+        </div>
+			<div class="right-container col-12 col-lg-6 d-flex flex-column justify-content-center pe-3">
+				<form class="h-100 col-11 align-self-end d-flex flex-column justify-content-evenly me-3" th:action="@{/registro}" method="post" th:object="${usuario}">
+					<div>
+						<h3 class="fs-1 fw-bold text-center text-lg-start">¡Bienvenido!</h3>
+					</div>
+					<div>
+						<div class="input-group mb-5">
+							<span class="input-group-text bg-transparent border-0 border-bottom border-secondary border-2 rounded-0" id="basic-addon1"><i class="fas fa-user" style="color: #737373;"></i></span>
+							<input type="text" id="nombre" th:field="*{nombre}" class="login-input form-control border-0 focus-ring focus-ring-light border-bottom border-secondary border-2 rounded-0" placeholder="Nobmre" aria-label="name" autofocus required >
+						</div>
+						<div class="input-group mb-5">
+							<span class="input-group-text bg-transparent border-0 border-bottom border-secondary border-2 rounded-0" id="basic-addon1"><i class="fas fa-user" style="color: #737373;"></i></span>
+							<input type="text" id="apellido" th:field="*{apellido}" class="login-input form-control border-0 focus-ring focus-ring-light border-bottom border-secondary border-2 rounded-0" placeholder="Apellido" aria-label="surname" required>
+						</div>
+						<div class="input-group mb-5">
+							<span class="input-group-text bg-transparent border-0 border-bottom border-secondary border-2 rounded-0" id="basic-addon1"><i class="fas fa-user" style="color: #737373;"></i></span>
+							<input type="email" id="email" th:field="*{email}" class="login-input form-control border-0 focus-ring focus-ring-light border-bottom border-secondary border-2 rounded-0" placeholder="Email" aria-label="email">
+						</div>
+						<div class="input-group">
+							<span class="input-group-text bg-transparent border-0 border-bottom border-secondary border-2 rounded-0" id="basic-addon1"><i class="fas fa-key" style="color: #737373;"></i></span>
+							<input type="password" id="password" th:field="*{password}" class="login-input form-control border-0 focus-ring focus-ring-light border-bottom border-secondary border-2 rounded-0" placeholder="Contraseña" aria-label="Password">
+						</div>
+					</div>
+					<div class="mt-3">
+						<button type="submit" value="Register" class="w-100 btn btn-success fw-semibold py-2">REGISTRARSE</button>
+					</div>
+					<div class="m-0 d-flex justify-content-end align-items-end">
+						<a class="link-offset-2 link-underline link-underline-opacity-0" href="/login">¿Ya tiene cuenta? ¡Ingresa!</a>
+					</div>
+				</form>
+      </div>
+		</div>
+		<footer class="w-100 align-self-end">
+			<p class="text-secondary lh-1 mt-0 m-2">© Club Social Deportivo Ascensión</p>
+		</footer>
+
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Usuarios</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Informacion de la Intervencion</h1>
+            <table border="1">
+                <tr>
+                    <th>Fecha y Hora de Incio</th>
+                    <th>Fecha y Hora de Fin</th>
+                    <th>Paciente</th>
+                    <th>Descripcion</th>
+                    <th>Profesional</th>
+                    <th>Editar Descripcion</th>
+                </tr>
+                <tr th:each="intervencion : ${intervencion}">
+                    <td th:text="${intervencion.fechaHoraInicio}">Mostrar FechaHoraInicio</td>
+                    <td th:text="${intervencion.fechaHoraFin}">Mostrar FechaHoraFin</td>
+                    <td th:text="${intervencion.paciente}">Mostrar Paciente</td>
+                    <td th:text="${intervencion.descripcion}">Mostrar Descripcion</td>
+                    <td th:text="${intervencion.profesional.getNombre() +' '  + intervencion.profesional.getApellido() }">Mostrar Profesional</td>
+                    <td><a th:href="@{/editar/} + ${intervencion.id_intervencion}"th:text="Editar"/></td>
+                </tr>
+            </table>
+        <form th:action="@{/intervenciones}"method="GET">
+            <button type="sumbit" class="btn btn-primary mt-3">Volver </button>
+        </form>
+    </body>
+</html>

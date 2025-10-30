@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="inicioAdmin"><img src="img/LOGOS-05.png"/></a>
+        <h1>Baja de Usuario</h1>
+    </header>
+
+    <form th:action="@{/bajaUsuario}" method="post">
+        <p>ingresa el mail del usuario a eliminar</p>
+        <label for="mailUsuario">mail</label>
+        <input type="email" class="form-control" id="mail" name="mail" required>
+
+        <button type="submit" class="btn btn-primary">Eliminar Usuario</button>
+        <a href="inicioAdmin">volver</a>
+    </form>
+</body>
+</html>

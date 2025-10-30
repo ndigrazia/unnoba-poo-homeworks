@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>registro</title>
+</head>
+<body>
+    <header>
+        <a href="inicioAdmin"><img src="img/LOGOS-05.png"/></a>
+        <h1>Alta de Usuario</h1>
+    </header>
+
+    <form th:action="@{/registro}" method="post">
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" class="form-control" id="mail" name="mail" required>
+
+        <label for="contraseña">Contraseña</label>
+        <input type="password" class="form-control" id="contraseña" name="contraseña" required>
+    
+        <label for="apellidoNombre">Apellido y Nombre</label>
+        <input type="text" class="form-control" id="apellidoNombre" name="apellidoNombre" required>
+    
+        <label for="telefono">Teléfono de contacto</label>
+        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+
+        <label for="rol">Rol</label>
+        <input type="rol" class="form-control" id="rol" name="rol" required>
+
+        <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+        <a href="inicioAdmin">volver</a>
+    </form>
+</body>
+</html>

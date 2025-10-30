@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>modificar</title>
+</head>
+<body>
+    <h1>Modificar</h1>
+    <form th:action="@{/actualizarUsuario}" method="post" th:object="${usuario}">
+        <label for="nombre">Correo:</label>
+        <input type="text" id="mail" name="mail" th:field="*{mail}" readonly/>
+
+        <label for="nombre">Apellido y Nombre:</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{apellidoNombre}" required/>
+    
+        <label for="correo">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" th:field="*{telefono}" required/>
+    
+        <label for="rol">Rol:</label>
+        <input type="text" id="rol" name="rol" th:field="*{rol}" required/>
+        
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a th:href="@{/buscarUsuario}">Volver al Formulario de Búsqueda</a>
+    </form>>    
+    
+   
+</body>
+</html>

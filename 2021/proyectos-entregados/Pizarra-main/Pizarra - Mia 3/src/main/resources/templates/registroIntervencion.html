@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="default::head">
+    </head>
+    <body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"><h4>Registro de Intervencion</h4></div>
+                    <div class="card-body">
+
+                        <form th:action="@{/save}" th:object="${intervencion}"method="post">
+                            <div class="row form-group">
+                                <label class="col-md-3">Fecha y Hora de Inicio:</label>
+                                <input type="datetime-local"class="form-control col-md-7" th:field="*{fechaHoraInicio}"/> 
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Fecha y Hora de Fin:</label>
+                                <input type="datetime-local"class="form-control col-md-7"th:field="*{fechaHoraFin}"/> 
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Paciente:</label>
+                                <input type="text"class="form-control col-md-7"th:field="*{paciente}"/> 
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Descripcion:</label>
+                                <input type="text"class="form-control col-md-7"th:field="*{descripcion}"/> 
+                            </div>
+                            <div class="form-group row">
+                                <label th:text="Profesionales"class="col-lg-3 col-form-label form-control-label" for="profesional"></label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" th:field="*{profesional}" id="profesional">
+                                        <option 
+                                        th:each="profesional:${profesionales}" 
+                                        th:value="${profesional.id_profesional}" 
+                                        th:text="${profesional.nombre}">
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <button type="submit" class="btn btn-success btn-block col-md-7 offset-3">Continuar</button>
+                            </div>
+                        </form>
+                        <form th:action="@{/principal}"method="GET">
+                            <button type="sumbit" class="btn btn-primary mt-3">Volver </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </body>
+</html>
